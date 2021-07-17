@@ -1,5 +1,6 @@
 # pyKFZImageReader
 
+## Installation OpenCV on Raspberry Pi 
 Tutorial-Video:
 https://www.youtube.com/watch?v=OugQIz_vcFo
 
@@ -50,4 +51,14 @@ sudo nano /etc/dphys-swapfile
 change 'CONF_SWAPESIZE=2048' to 'CONF_SWAPESIZE=100
 
 sudo systemetcl restart dphys-swapfile
+
+## Bilderkennung Tool Tesseract-OCR
+
+* sudo apt-get install tesseract-ocr
+
+
+
+## Python Projekt Bibliotheken für Linux
+* matplotlib
+  * sudo apt-get install python3-matplotlib
 
