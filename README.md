@@ -35,6 +35,7 @@ change 'CONF_SWAPESIZE=100' to 'CONF_SWAPESIZE=2048'
 sudo systemetcl restart dphys-swapfile
 
 sudo git clone https://github.com/opencv/opencv.git
+
 sudo git clone https://github.com/opencv/opencv_contrib.git
 
 3) Compiling OpenCV on Rasperberry Pi
@@ -46,6 +47,7 @@ mkdir /home/pi/opencv/build
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D ENABLE_NEON=ON -D ENABLE_VFPV3=ON -D BUILD_TESTS=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D OPENCV_ENABLE_NONREE=ON -D CMAKE_SHARED_LINKER_FLAGS=-latomic -D BUILD_EXAMPLES=OFF ..
 
 sudo ldconfig
+
 sudo nano /etc/dphys-swapfile
 
 change 'CONF_SWAPESIZE=2048' to 'CONF_SWAPESIZE=100
