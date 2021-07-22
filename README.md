@@ -1,4 +1,4 @@
-# pyKFZImageReader
+# pyKFZImageReader with Docker
 
 ## Installation Docker on Windows
 
