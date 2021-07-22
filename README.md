@@ -1,5 +1,13 @@
 # pyKFZImageReader
 
+## Installation Docker on Windows
+
+Create Account on https://hub.docker.com/ and install Docker Desktop Application
+
+Need to Activate on Windows the Windows-Features: "Windwos-Subsystem für Linux", "Windows-Hypervisor-Plattform", "Plattform für virtuelle Computer" 
+
+Install WSL on Windows with the following URL https://docs.microsoft.com/de-de/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
+
 ## Installation OpenCV on Raspberry Pi 
 Tutorial-Video:
 https://www.youtube.com/watch?v=OugQIz_vcFo
