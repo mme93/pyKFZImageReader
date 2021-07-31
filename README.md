@@ -8,6 +8,22 @@ Need to Activate on Windows the Windows-Features: "Windwos-Subsystem für Linux"
 
 Install WSL on Windows with the following URL https://docs.microsoft.com/de-de/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
 
+## User Docker
+https://docs.docker.com/language/python/build-images/
+
+Create Dockerfile in your Python Project Folder. There are different Option in Dockerfile, this example show one Example.
+
+---------------------------------------------
+FROM python:3
+
+ADD main.py .
+
+CMD ["python","./main.py"]
+
+---------------------------------------------
+To Build docker, you need the following Command: "docker build -t dockerImageName ."
+To Run the Docker Image: "docker run dockerImageName"
+
 ## Installation OpenCV on Raspberry Pi 
 Tutorial-Video:
 https://www.youtube.com/watch?v=OugQIz_vcFo
