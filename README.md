@@ -30,7 +30,7 @@ To Run the Docker Image: "docker run dockerImageName"
 Tutorial-Video:
 https://www.youtube.com/watch?v=OugQIz_vcFo
 
-In folgendenen Schritten wird erklärt, was alles benötigt wird um OpenCV auf einem Linux System zu installieren.
+The following steps explain what is needed to install OpenCV on a Linux system.
 
 sudo apt update
 
@@ -68,7 +68,7 @@ sudo git clone https://github.com/opencv/opencv_contrib.git
 
 mkdir /home/pi/opencv/build
 
-!Wichtig cmake muss im build verzeichnis geöffnet werden.
+! Important cmake must be opened in the build directory.
 
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D ENABLE_NEON=ON -D ENABLE_VFPV3=ON -D BUILD_TESTS=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D OPENCV_ENABLE_NONREE=ON -D CMAKE_SHARED_LINKER_FLAGS=-latomic -D BUILD_EXAMPLES=OFF ..
 
@@ -80,13 +80,13 @@ change 'CONF_SWAPESIZE=2048' to 'CONF_SWAPESIZE=100
 
 sudo systemetcl restart dphys-swapfile
 
-## Bilderkennung Tool Tesseract-OCR
+## Image recognition Tool Tesseract-OCR
 
 * sudo apt-get install tesseract-ocr
 
 
 
-## Python Projekt Bibliotheken für Linux
+## Python Projekt Libary für Linux
 * matplotlib
   * sudo apt-get install python3-matplotlib
 
