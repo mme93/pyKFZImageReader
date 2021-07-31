@@ -8,7 +8,7 @@ Need to Activate on Windows the Windows-Features: "Windwos-Subsystem für Linux"
 
 Install WSL on Windows with the following URL https://docs.microsoft.com/de-de/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
 
-## User Docker
+## Use Docker
 https://docs.docker.com/language/python/build-images/
 
 Create Dockerfile in your Python Project Folder. There are different Option in Dockerfile, this example show one Example.
