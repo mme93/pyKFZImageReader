@@ -22,6 +22,7 @@ class ImgWoker:
         gamma_table=[np.power(x/255.0,gamma)*255.0 for x in range(256)]
         gamma_table=np.round(np.array(gamma_table)).astype(np.uint8)
         return cv2.LUT(img,gamma_table)
+        
     def gammaTresholdImg(self,path):
         img = cv2.imread(path)
         image_gamma_correct=self.gamma_trans(1.5,img)
