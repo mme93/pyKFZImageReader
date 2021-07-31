@@ -1,40 +1,33 @@
-from os import utime
-from PIL import Image
-import cv2 
-import numpy as np
-import re
-from matplotlib import pyplot as plt
-from imgWoker import ImgWoker
+from imageEditing import ImageEditing
 from utlis import Utlis
+from pathlib import Path
+import os
 
-utlis = Utlis()
-imageName='scan3'
-utlis.calibrateImage(imageName,'startImg/scan3.jpg')
-#utlis.testTresh()
-utlis.tresholdImg(imageName)
-utlis.textDetection(imageName)
+class Main:
+    imageEditing = ImageEditing()
+    utlis = Utlis()
 
+    #Müssen evtl in anderen Systemen angepasst werden
+    startImgDir = Path('KI/startImg')
+    endImgDir = Path('KI/endImg')
 
+    if utlis.initProjectStructur(startImgDir,endImgDir):
+        for img in os.listdir(startImgDir):
+            
+            imageNameArray =img.split(".")
+            #Name der Datei
+            imageName=imageNameArray[0]
+            #Pfad der Datei mit Dateityp
+            startImgPath=str(startImgDir)+ "/" + img
+            #Endpfad mit Dateiname ohne Dateityp am Ende
+            endImgPath=str(endImgDir)+ "/" + imageName
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#myImgWorker =ImgWoker('startImg/scan1.jpg','cutImg/croppedGrayTestImg.jpg')
-#myImgWorker.cutImg()
-#myImgWorker.gammaTresholdImg('startImg/scan1.jpg')
-#myImgWorker.tresImg('startImg/whatsapp.jpg')
-#myImgWorker.adaptiveTreshold()
-#
-#text = tess.image_to_string(img)
-#print(text)
+            imageEditing.calibrateImage(imageName,startImgPath,str(endImgDir)+'/')
+            #Testtresh funktioniert nicht bei allen Bildern
+            #imageEditing.testTresh()
+            imageEditing.tresholdImg(imageName,str(endImgDir)+'/')
+            imageEditing.textDetection(imageName,str(endImgDir)+'/')
+    else:
+        print('Es sind keine Bilder zum bearbeiten vorhanden.')
+    
+    
