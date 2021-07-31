@@ -21,7 +21,9 @@ ADD main.py .
 CMD ["python","./main.py"]
 
 ---------------------------------------------
+
 To Build docker, you need the following Command: "docker build -t dockerImageName ."
+
 To Run the Docker Image: "docker run dockerImageName"
 
 ## Installation OpenCV on Raspberry Pi 
