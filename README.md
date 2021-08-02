@@ -1,4 +1,20 @@
-# pyKFZImageReader with Docker
+# Python Car Image Reader with Docker on Rasberry Pi 4 Debian
+
+- [Docker](#docker)
+	- [Installation Docker on Windows](#dockerLinux)
+	- [Installation Docker on Linux](#dockerWindows)
+	- [Create Dockerfile](#createDockerFile)	
+	- [Run Docker Images on Linux](#runDockerImg)
+- [Installation OpenCV on Linux](#installOpenCV)
+- [Image recognition Tool Tesseract-OCR](#tesserActOCR)
+- [Python Projekt Libary für Linux](#projLiblPy)
+
+
+<a name="docker"/>
+
+# Docker
+
+<a name="dockerLinux"/>
 
 ## Installation Docker on Windows
 
@@ -8,7 +24,25 @@ Need to Activate on Windows the Windows-Features: "Windwos-Subsystem für Linux"
 
 Install WSL on Windows with the following URL https://docs.microsoft.com/de-de/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
 
-## Use Docker
+<a name="dockerWindows"/>
+
+## Installation Docker on Linux (Rasberry PI)
+
+Quelle: https://medium.com/@tukai.anirban/docker-on-raspberry-pi-getting-started-c7b403205ecf
+
+sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+
+sudo apt-get install apt-transport-https ca-certificates software-properties-common
+
+sudo apt-get -y install docker-engine
+
+sudo reboot
+
+sudo apt-get update
+
+<a name="createDockerFile"/>
+
+## Create Dockerfile
 https://docs.docker.com/language/python/build-images/
 
 Create Dockerfile in your Python Project Folder. There are different Option in Dockerfile, this example show one Example.
@@ -26,7 +60,14 @@ To Build docker, you need the following Command: "docker build -t dockerImageNam
 
 To Run the Docker Image: "docker run dockerImageName"
 
-## Installation OpenCV on Raspberry Pi 
+
+<a name="runDockerImg"/>
+
+## Run Docker Images on Linux (Raspberry Pi)
+
+<a name="installOpenCV"/>
+
+## Installation OpenCV on Linux (Raspberry Pi) 
 Tutorial-Video:
 https://www.youtube.com/watch?v=OugQIz_vcFo
 
@@ -80,13 +121,17 @@ change 'CONF_SWAPESIZE=2048' to 'CONF_SWAPESIZE=100
 
 sudo systemetcl restart dphys-swapfile
 
+<a name="tesserActOCR"/>
+
 ## Image recognition Tool Tesseract-OCR
 
 * sudo apt-get install tesseract-ocr
 
 
+<a name="projLiblPy"/>
 
 ## Python Projekt Libary für Linux
+
 * matplotlib
   * sudo apt-get install python3-matplotlib
 
