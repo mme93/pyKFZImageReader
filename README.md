@@ -4,6 +4,7 @@
 	- [Installation Docker on Windows](#dockerLinux)
 	- [Installation Docker on Linux](#dockerWindows)
 	- [Create Dockerfile](#createDockerFile)	
+	- [Create Tag and push to Dockerhub](#createTagPush)	
 	- [Run Docker Images on Linux](#runDockerImg)
 - [Installation OpenCV on Linux](#installOpenCV)
 - [Image recognition Tool Tesseract-OCR](#tesserActOCR)
@@ -30,15 +31,15 @@ Install WSL on Windows with the following URL https://docs.microsoft.com/de-de/w
 
 Quelle: https://medium.com/@tukai.anirban/docker-on-raspberry-pi-getting-started-c7b403205ecf
 
-sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh
+*sudo curl -fsSL get.docker.com -o get-docker.sh && sh get-docker.sh*
 
-sudo apt-get install apt-transport-https ca-certificates software-properties-common
+*sudo apt-get install apt-transport-https ca-certificates software-properties-common*
 
-sudo apt-get -y install docker-engine
+*sudo apt-get -y install docker-engine*
 
-sudo reboot
+*sudo reboot*
 
-sudo apt-get update
+*sudo apt-get update*
 
 <a name="createDockerFile"/>
 
@@ -60,6 +61,19 @@ To Build docker, you need the following Command: "docker build -t dockerImageNam
 
 To Run the Docker Image: "docker run dockerImageName"
 
+<a name="createTagPush"/>
+
+## Create Tag and push to Dockerhub
+
+You need to login first, before you can push Projects to Dockerhub.
+
+**Create a docker tag:** 	
+
+*docker tag REPOSITORY LOGINNAME/REPOSITORY:TAG* 
+
+**Push to Dockhub:** 	
+
+*docker push LOGINNAME/REPOSITORY:TAG*
 
 <a name="runDockerImg"/>
 
@@ -73,53 +87,53 @@ https://www.youtube.com/watch?v=OugQIz_vcFo
 
 The following steps explain what is needed to install OpenCV on a Linux system.
 
-sudo apt update
+*sudo apt update*
 
-sudo apt upgrade
+*sudo apt upgrade*
 
 1) Installing Packges for OpenCV
 
-sudo apt install cmak build-essential pkg-config git
+*sudo apt install cmak build-essential pkg-config git*
 
-sudo apt install libjpeg-dev libtiff-dev libjasper-dev libpng-dev libwebp-dev libopenexr-dev
+*sudo apt install libjpeg-dev libtiff-dev libjasper-dev libpng-dev libwebp-dev libopenexr-dev*
 
-sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libdc1394-22-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+*sudo apt install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libdc1394-22-dev libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev*
 
-sudo apt install libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5
+*sudo apt install libgtk-3-dev libqtgui4 libqtwebkit4 libqt4-test python3-pyqt5*
 
-sudo apt install libatlas-base-dev liblapacke-dev gfortran
+*sudo apt install libatlas-base-dev liblapacke-dev gfortran*
 
-sudo apt install libhdf5-dev libhdf5-103
+*sudo apt install libhdf5-dev libhdf5-103*
 
-sudo apt install python3-dev python3-pip python3-numpy
+*sudo apt install python3-dev python3-pip python3-numpy*
 
 2) Preparing your Raspberry Pi for Compiling OpenCV
 
-sudo nano /etc/dphys-swapfile
+*sudo nano /etc/dphys-swapfile*
 
-change 'CONF_SWAPESIZE=100' to 'CONF_SWAPESIZE=2048'
+*change 'CONF_SWAPESIZE=100' to 'CONF_SWAPESIZE=2048'*
 
-sudo systemetcl restart dphys-swapfile
+*sudo systemetcl restart dphys-swapfile*
 
-sudo git clone https://github.com/opencv/opencv.git
+*sudo git clone https://github.com/opencv/opencv.git*
 
-sudo git clone https://github.com/opencv/opencv_contrib.git
+*sudo git clone https://github.com/opencv/opencv_contrib.git*
 
 3) Compiling OpenCV on Rasperberry Pi
 
-mkdir /home/pi/opencv/build
+*mkdir /home/pi/opencv/build*
 
 ! Important cmake must be opened in the build directory.
 
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D ENABLE_NEON=ON -D ENABLE_VFPV3=ON -D BUILD_TESTS=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D OPENCV_ENABLE_NONREE=ON -D CMAKE_SHARED_LINKER_FLAGS=-latomic -D BUILD_EXAMPLES=OFF ..
+*cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREIX=/usr/local -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D ENABLE_NEON=ON -D ENABLE_VFPV3=ON -D BUILD_TESTS=OFF -D INSTALL_PYTHON_EXAMPLES=OFF -D OPENCV_ENABLE_NONREE=ON -D CMAKE_SHARED_LINKER_FLAGS=-latomic -D BUILD_EXAMPLES=OFF ..*
 
-sudo ldconfig
+*sudo ldconfig*
 
-sudo nano /etc/dphys-swapfile
+*sudo nano /etc/dphys-swapfile*
 
-change 'CONF_SWAPESIZE=2048' to 'CONF_SWAPESIZE=100
+*change 'CONF_SWAPESIZE=2048' to 'CONF_SWAPESIZE=100*
 
-sudo systemetcl restart dphys-swapfile
+*sudo systemetcl restart dphys-swapfile*
 
 <a name="tesserActOCR"/>
 
