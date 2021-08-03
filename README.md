@@ -77,6 +77,10 @@ You need to login first, before you can push Projects to Dockerhub.
 
 <a name="runDockerImg"/>
 
+**Remove Image from local Docker**
+
+*docker rmi -f REPOSITORY:TAG*
+
 ## Run Docker Images on Linux (Raspberry Pi)
 
 <a name="installOpenCV"/>
